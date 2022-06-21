@@ -1,7 +1,7 @@
 import style from './phonebook-app.module.css';
 import { getContacts } from 'redux/contacts/contacts-selector';
 
-import { useState, useRef, useCallback } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import actions from 'redux/contacts/contactsActionCreators';
 
@@ -12,7 +12,7 @@ import Filter from './Filter';
 const PhonebookApp = () => {
   const [filter, setFilter] = useState('');
 
-  const firstRender = useRef(true);
+  // const firstRender = useRef(true);
 
   const dispatch = useDispatch();
   const { contacts } = useSelector(getContacts, shallowEqual);
@@ -40,7 +40,7 @@ const PhonebookApp = () => {
     setFilter(target.value);
   };
 
-  const getFilteredContactsList = useCallback(() => {
+  const getFilteredContactsList = () => {
     if (!filter) {
       return contacts;
     }
@@ -49,7 +49,7 @@ const PhonebookApp = () => {
       contact.name.toLowerCase().includes(filterQuery)
     );
     return filteredItems;
-  });
+  };
 
   const filteredContacts = getFilteredContactsList();
   return (
