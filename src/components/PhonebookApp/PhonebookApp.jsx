@@ -8,7 +8,6 @@ import actions from 'redux/contacts/contactsActionCreators';
 import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList';
 import Filter from './Filter';
-import store from 'redux/store';
 
 const PhonebookApp = () => {
   const [filter, setFilter] = useState('');

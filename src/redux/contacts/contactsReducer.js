@@ -1,5 +1,4 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { useSelector } from 'react-redux';
 import { addContact, removeContact } from './contactsActionCreators';
 
 const initialState = [
@@ -12,3 +11,4 @@ export const contactsReducer = createReducer(initialState, {
   [removeContact.type]: (store, { payload }) =>
     store.filter(contact => contact.id !== payload),
 });
+
