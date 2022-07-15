@@ -8,11 +8,9 @@ export const addContact = createAction('contacts/add', data => {
 
 export const removeContact = createAction('contacts/remove');
 
- const actions = {
+const actions = {
   addContact,
   removeContact,
 };
 
-export default actions
-
-
+export default actions;

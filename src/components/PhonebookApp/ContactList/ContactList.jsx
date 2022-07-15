@@ -3,6 +3,7 @@ import style from './contact-list.module.css';
 import PropTypes from 'prop-types';
 
 const ContactList = ({ contacts, deleteContact }) => {
+  console.log(contacts);
   const elements = contacts.map(contact => {
     const { name, number, id } = contact;
     return (
@@ -19,13 +20,8 @@ const ContactList = ({ contacts, deleteContact }) => {
     );
   });
 
-  
-
   return <ul className={style.list}>{elements}</ul>;
-
 };
-
-
 
 export default ContactList;
 
